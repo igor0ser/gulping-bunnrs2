@@ -1,0 +1,73 @@
+/* banner-box */
+
+$box-width: 160px;
+$box-height: 600px;
+
+/* scrollbars */
+$scrollbar-height: 216px;
+$scrollbar-top: 380px;
+$scroll-margin-top: 430px;
+
+/* text1 */
+$text1-left: 0;
+$text1-top: 378px;
+
+/* text2 */
+$text2-left: 7px;
+$text2-top: 143px;
+
+/* btn */
+$btn-left: 12px;
+$btn-top: 239px;
+
+@mixin btn2{
+	top: 280px;
+}
+
+@mixin btn3{
+	top: 321px;
+}
+
+/* logo */
+$logo-left: 6px;
+$logo-top: 55px;
+$logo-scale: 0.804054054;
+
+/* small-logo */
+$small-logo-left: 20px;
+$small-logo-top: 61px;
+
+/* content */
+$content-height: 3276px;
+$content-logos-bottom: 91px;
+$layer-height: 168px;
+$content-logos-mt: 8px;
+$content-logos-fc-margin: 0 13px 0 4px;
+
+@mixin link-to-PI{
+	width: 131px;
+	height: 24px;
+	bottom: 286px;
+	left: 3px;
+}
+
+@mixin link-to-fda{
+	width: 104px;
+	height: 10px;
+	left: 7px;
+	bottom: 147px;
+}
+@mixin full-pi-link{
+	width: 67px;
+	height: 11px;
+	bottom: 288px;
+	left: 3px;
+}
+
+/* animation */
+@mixin logo1-1 {
+	top: 175px;
+}
+@mixin logo1-2 {
+	top: $logo-top;
+}

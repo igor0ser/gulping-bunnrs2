@@ -1,0 +1,22 @@
+{
+  "name": "banner",
+  "version": "1.0.0",
+  "description": "banner",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-add-src": "^0.2.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-open": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^2.2.0",
+    "gulp-watch": "^4.3.5",
+    "gulp-zip": "^3.2.0",
+    "yargs": "^4.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igor0ser/gulbing-bunnrs.git"
+  },
+  "license": "ISC"
+}

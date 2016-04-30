@@ -1,0 +1,110 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://s0.2mdn.net/ads/studio/Enabler.js"> </script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="nanoScroller.js"></script>
+<script>
+	$(function() {
+		jcf.replaceAll();
+	});
+</script>
+<style type="text/css">
+	//= _temp/temp.html
+</style>
+</head>
+<body>
+	<div class="banner-box">
+		<div class="box-content">
+		<img src="logo.png" alt="" class="logo" id="logo">
+		<img src="small-logo.png" alt="" class="small-logo">
+		<img src="img-left.png" alt="" class="top top1" >
+		<img src="img-right.png" alt="" class="top" >
+		<img src="text2.png" alt="" class="text2" >
+		<img src="btn-1.png" alt="" class="btn1" id="btn-efficacy">
+		<img src="btn-2.png" alt="" class="btn2" id="btn-safety">
+		<img src="btn-3.png" alt="" class="btn3" id="btn-dosing">
+		<img src="text1.png" alt="" class="text1" >
+		<span id="full-pi-link" class="inside-link"></span>
+		<div class="layer"></div>
+		<div class="scroll-holder" id="scroll-holder">
+			<div class="nano">
+				<div class="scroll-box jcf-scrollable" id="scroll-box">
+					<div class="content">
+						<img src="isi.png" alt="" >
+						<span id="link-to-PI" class="inside-link"></span>
+						<span id="link-to-fda" class="inside-link"></span>
+						<div class="logos">
+							<span id="otsuka-logo"><img src="logo1.png" alt=""></span>
+							<span id="lundbeck-logo"><img src="logo2.png" alt=""></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			var scrollArea = $(".scroll-box "),
+				scrollLayer = $('.layer'),
+				scrollThumb = $('.jcf-scrollbar-slider'),
+				flag = false;
+				$(scrollLayer).bind('mousewheel DOMMouseScroll', function () {
+					flag = true;
+					$(this).css('display','none');
+				});
+				$(scrollThumb).bind('mousedown', function () {
+					flag = true;
+					$(scrollLayer).css('display','none');
+				});
+
+			setTimeout(function(){
+				if (flag){
+					$(scrollArea).stop();
+				}
+				else{
+					$(scrollArea).animate({ scrollTop: $('.content').height() }, 115000, 'linear');
+					$(scrollLayer).bind('mousewheel DOMMouseScroll', function () {
+						$(scrollArea).stop();
+						$(this).css('display','none');
+					});
+					$(scrollThumb).bind('mousedown', function () {
+						$(scrollArea).stop();
+						$('.jcf-scrollbar-slider').css('pointer-events','auto');
+					});
+				}
+			}, 6500);
+		});
+	</script>
+	<script>
+		function logoHandler(e) {Enabler.exit('Logo Exit');}
+		document.getElementById('logo').addEventListener('click', logoHandler, false);
+
+		function logoOtsukaHandler(e) {Enabler.exit('Logo Otsuka Exit');}
+		document.getElementById('otsuka-logo').addEventListener('click', logoOtsukaHandler, false);
+
+		function logoLundbeckHandler(e) {Enabler.exit('Logo Lundbeck Exit');}
+		document.getElementById('lundbeck-logo').addEventListener('click', logoLundbeckHandler, false);
+
+		function prescribingInformationHandler(e) {Enabler.exit('Full Prescribing Information Exit');}
+		document.getElementById('full-pi-link').addEventListener('click', prescribingInformationHandler, false);
+
+		function efficacyHandler(e) {Enabler.exit('Efficacy Data Exit');}
+		document.getElementById('btn-efficacy').addEventListener('click', efficacyHandler, false);
+
+		function safetyHandler(e) {Enabler.exit('Safety Data Exit');}
+		document.getElementById('btn-safety').addEventListener('click', safetyHandler, false);
+
+		function dosingHandler(e) {Enabler.exit('Dosing Exit');}
+		document.getElementById('btn-dosing').addEventListener('click', dosingHandler, false);
+
+		function linkToPIHandler(e) {Enabler.exit('Link To PI Exit');}
+		document.getElementById('link-to-PI').addEventListener('click', linkToPIHandler, false);
+
+		function linkToFdackHandler(e) {Enabler.exit('Link To Fda Exit');}
+		document.getElementById('link-to-fda').addEventListener('click', linkToFdackHandler, false);
+	</script>
+</body>
+</html>
