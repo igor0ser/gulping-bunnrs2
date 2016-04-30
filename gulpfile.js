@@ -22,19 +22,19 @@ gulp.task('css', () =>
 );
 
 
-gulp.task('image', () => 
+gulp.task('copyFiles', () => 
 	gulp.src('src/' + argv.size + '/*.png')
 		.pipe(addsrc('src/' + argv.size + '/*.gif'))
-		.pipe(addsrc('src/' + argv.size + '/' + argv.type + '/*.png'))
+		.pipe(addsrc('src/' + argv.size + '/*.jpg'))
 		.pipe(addsrc('src/nanoScroller.js'))
-		.pipe(gulp.dest(dest(argv)))
+		.pipe(gulp.dest('build/' + argv.size + '/'))
 );
 
-gulp.task('html', ['css', 'image'], () => 
+gulp.task('html', ['css'], () => 
 	gulp.src('src/index.html')
 		.pipe(rigger())
-		.pipe(gulp.dest(dest(argv)))
-);
+		.pipe(gulp.dest('build/' + argv.size + '/')
+));
 
 gulp.task('watch', () => 
 	watch(['src/' + argv.size + '/**/*.*', 'src/*.*'],(event, cb) => 
@@ -44,25 +44,15 @@ gulp.task('watch', () =>
 gulp.task('open', () => {
 	var options = {
 		app: 'chrome',
-		uri: dest(argv) + 'index.html'
+		uri: 'build/' + argv.size + '/index.html'
 	};
 	return gulp.src('').pipe(open(options));
 });
 
-gulp.task('zip', ['html', 'image'], () => 
-	gulp.src(dest(argv) + '*.*')
-		.pipe(zip(argv.type + '_' + argv.size + '.zip'))
+gulp.task('zip', ['html', 'copyFiles'], () => 
+	gulp.src('build/' + argv.size + '/*.*')
+		.pipe(zip(argv.size + '.zip'))
 		.pipe(gulp.dest('build/'))
 );
 
-/*gulp.task('default', ['zip', 'watch', 'open'], () => {
-	gulp.start('zip');
-});*/
-
-gulp.task('default', () => {
-	console.log(argv);
-});
-
-function dest(argv){
-	return 'build/' + argv.type + '_' + argv.size + '/';
-}
+gulp.task('default', ['zip', 'watch', 'open']);
