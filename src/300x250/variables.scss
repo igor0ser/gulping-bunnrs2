@@ -6,68 +6,35 @@ $box-height: 250px;
 /* scrollbars */
 $scrollbar-height: 84px;
 $scrollbar-top: -32px;
-$scroll-margin-top: 194px;
+
+/* containers position and sizes */
+@mixin container1 {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 155px;
+}
+
+@mixin container2 {
+	top: 155px;
+	left: 0;
+	width: 100%;
+	height: 95px;
+	border-top: 4px solid #ffb718;
+}
+
+
+/* photo */
+$photo-origin: 53% 14%;
+$photo-scale: 1.7;
 
 /* text1 */
-$text1-left: 9px;
-$text1-top: 164px;
+$text1-top: 18px;
+$text1-left: 10px;
 
-/* text2 */
-$text2-left: 33px;
-$text2-top: 70px;
 
-/* btn */
-$btn-left: 15px;
-$btn-top: 130px;
 
-@mixin btn2{
-	left: 105px;
-}
-
-@mixin btn3{
-	left: 196px;
-}
-
-/* logo */
-$logo-left: 30px;
-$logo-top: -13px;
-$logo-scale: 0.519148936170;
-
-/* small-logo */
-$small-logo-left: 86px;
-$small-logo-top: 9px;
-
-/* content */
-$content-height: 1768px;
-$content-logos-bottom: 56px;
-$layer-height: 52px;
-$content-logos-mt: 10px;
-$content-logos-fc-margin: 0 31px 0 11px;
-
-@mixin link-to-PI{
-	width: 155px;
-	height: 11px;
-	bottom: 186px;
-	left: 51px;
-}
-
-@mixin link-to-fda{
-	width: 104px;
-	height: 10px;
-	left: 83px;
-	bottom: 117px;
-}
-@mixin full-pi-link{
-	left: 56px;
-	top: 163px;
-	width: 154px;
-	height: 11px;
-}
-
-/* animation */
-@mixin logo1-1 {
-	top: 36px;
-}
 @mixin logo1-2 {
 	top: $logo-top;
+	height: 95px;
 }

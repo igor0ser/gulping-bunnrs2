@@ -13,11 +13,10 @@ var open = require('gulp-open');
 var zip = require('gulp-zip');
 
 gulp.task('css', () => 
-		gulp.src('src/' + argv.size + '/variables.scss')
-		.pipe(addsrc('src/main.scss'))
+		gulp.src(['src/' + argv.size + '/variables.scss', 'src/main.scss'])
 		.pipe(concat('temp.scss'))
 		.pipe(sass().on('error', sass.logError))
-		.pipe(rename('_temp/temp.html'))
+		.pipe(rename('_temp.html'))
 		.pipe(gulp.dest('src'))
 );
 
