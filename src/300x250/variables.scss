@@ -25,14 +25,15 @@ $scrollbar-top: -32px;
 
 
 /* photo */
-$photo-origin: 53% 14%;
-$photo-scale: 1.7;
+$photo1-origin: 53% 14%;
+$photo1-scale: 1.7;
 
 /* text1 */
 $text1-top: 18px;
 $text1-left: 10px;
 
-
+/* text2 */
+$text2-bottom: 27px;
 
 @mixin logo1-2 {
 	top: $logo-top;

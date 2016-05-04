@@ -46,36 +46,156 @@ img{border: 0;vertical-align: top;}
 	@include container2;
 }
 
-.photo{
-	animation: photo $transition1 $period1 ease-in-out both;
-	transform-origin: $photo-origin;
-
+.photo1{
+	animation: photo1 4s 1s linear both;
+	transform-origin: $photo1-origin;
 }
 
-@keyframes photo{
+@keyframes photo1{
 	0%{
 		transform: scale(1);
 	}
-	100%{
-		transform: scale($photo-scale);
+	75%{
+		transform: scale($photo1-scale);
 	}
+	100%{
+		transform: scale($photo1-scale);
+	}
+}
+
+.photo1-wrapper{
+	animation: photo1 4s 1s linear both;
+	overflow: hidden;
+	width: 300px;
+	height: 155px;
+	animation: photo1-wrapper 1s 5s linear both;
+}
+
+@keyframes photo1-wrapper{
+	0% { transform: translateX(0);}
+	100% { transform: translateX(-300px);}
+}
+
+.photo2{
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 .text1{
 	position: absolute;
 	top: $text1-top;
 	left: $text1-left;
-	animation: text1 $transition1 $period1 ease-in-out both;
+	animation: text1 2s 2s ease-in-out both;
 }
 
 @keyframes text1{
 	0%{
-		top: $text1-top;
 		opacity: 1;
 	}
+	75%{
+		opacity: 0;
+	}
 	100%{
-		top: -30px;
+		transform: translateY(-100px);
 		opacity: 0;
 	}
 }
 
+.text2{
+	position: absolute;
+	bottom: $text2-bottom;
+	left: $text1-left;
+	animation: text2 4s 2s ease-in-out both;
+}
+
+@keyframes text2{
+	0% { transform: translateY(100px); opacity: 0;}
+	12.5% { opacity: 0; }
+	50% { transform: translateY(0); opacity: 1; }
+	75% { opacity: 1; }
+	100% { opacity: 0; } 
+}
+
+.wrap{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	animation: wrap 1s 5s linear both;
+}
+
+@keyframes wrap{
+	0% { transform: translateX(300px);}
+	100% { transform: translateX(0);}
+}
+
+.wrap div{
+	width: 180px;
+	height: 155px;
+	transform: skewX(-9deg);
+	background: #fff;
+	position: absolute;
+	top: 0;
+	right: -15px;
+}
+
+.logo{
+	position: absolute;
+	top: 7px;
+	right: 15px;
+	animation: logo 1s 6s ease-in both;
+}
+
+@keyframes logo{
+	0% { transform: translateY(100px); opacity: 0; }
+	100% { transform: translateX(0); opacity: 1; }
+}
+
+.logo-text1{
+	position: absolute;
+	top: 81px;
+	right: 9px;
+	animation: logo-text1 3s 7s ease-in both;
+	opacity: 0;
+}
+
+@keyframes logo-text1{
+	0% { opacity: 0; }
+	33.33% { opacity: 1; }
+	66.66% { opacity: 1; }
+	100% {opacity: 0; }
+}
+
+.logo-text2{
+	position: absolute;
+	top: 78px;
+	right: 9px;
+	animation: logo-text2 3s 10s ease-in both;
+}
+
+@keyframes logo-text2{
+	0% { transform: translateY(40px); opacity: 0; }
+	33.33% { transform: translateY(0); opacity: 1; }
+	66.66% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+.logo-text3{
+	position: absolute;
+	top: 68px;
+	right: 19px;
+	animation: logo-text3 1s 13s ease-in both;
+}
+
+.button{
+	position: absolute;
+	top: 118px;
+	right: 17px;
+	animation: logo-text3 1s 14s ease-in both;
+}
+
+@keyframes logo-text3{
+	0% { transform: translateY(30px); opacity: 0; }
+	100% { transform: translateY(0); opacity: 1; }
+}
