@@ -15,7 +15,7 @@ var  rimraf = require('rimraf-promise');
 
 var path = {
 	src: () => 'src/' + argv.size + '/',
-	build: () => 'build' + argv.size + '/'
+	build: () => 'build/' + argv.size + '/'
 };
 
 gulp.task('css', () => 
