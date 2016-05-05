@@ -1,0 +1,339 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://s0.2mdn.net/ads/studio/Enabler.js"> </script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<style type="text/css">
+	/* banner-box */
+	/* scrollbars */
+	/* containers position and sizes */
+	/* photo */
+	/* text1 */
+	/* text2 */
+	/* timing variables */
+	* {
+	  box-sizing: border-box; }
+	
+	html,
+	body {
+	  margin: 0; }
+	
+	img {
+	  border: 0;
+	  vertical-align: top; }
+	
+	.slimScrollBar {
+	  height: 10px !important;
+	  width: 4px !important;
+	  opacity: .3 !important; }
+	
+	.slimScrollRail {
+	  width: 4px !important; }
+	
+	.banner-box,
+	.box-content {
+	  width: 300px;
+	  height: 250px;
+	  overflow: hidden;
+	  position: relative;
+	  background: #fff;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none; }
+	
+	.box-content {
+	  border: 1px solid #636363; }
+	
+	.container1, .container2 {
+	  position: absolute;
+	  overflow: hidden; }
+	
+	.container1 {
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 154px; }
+	
+	.container2 {
+	  top: 154px;
+	  left: 0;
+	  width: 100%;
+	  height: 95px;
+	  border-top: 4px solid #ffb718; }
+	
+	.photo1 {
+	  animation: photo1 4s 1s linear both;
+	  transform-origin: 53% 14%; }
+	
+	@keyframes photo1 {
+	  0% {
+	    transform: scale(1); }
+	  75% {
+	    transform: scale(1.7); }
+	  100% {
+	    transform: scale(1.7); } }
+	
+	.photo1-wrapper {
+	  animation: photo1 4s 1s linear both;
+	  overflow: hidden;
+	  width: 300px;
+	  height: 155px;
+	  animation: photo1-wrapper 1s 5s linear both; }
+	
+	@keyframes photo1-wrapper {
+	  0% {
+	    transform: translateX(0); }
+	  100% {
+	    transform: translateX(-300px); } }
+	
+	.photo2 {
+	  position: absolute;
+	  left: 0;
+	  top: 0; }
+	
+	.text1 {
+	  position: absolute;
+	  top: 18px;
+	  left: 10px;
+	  animation: text1 2s 2s ease-in-out both; }
+	
+	@keyframes text1 {
+	  0% {
+	    opacity: 1; }
+	  75% {
+	    opacity: 0; }
+	  100% {
+	    transform: translateY(-100px);
+	    opacity: 0; } }
+	
+	.text2 {
+	  position: absolute;
+	  bottom: 27px;
+	  left: 10px;
+	  animation: text2 4s 2s ease-in-out both; }
+	
+	@keyframes text2 {
+	  0% {
+	    transform: translateY(100px);
+	    opacity: 0; }
+	  12.5% {
+	    opacity: 0; }
+	  50% {
+	    transform: translateY(0);
+	    opacity: 1; }
+	  75% {
+	    opacity: 1; }
+	  100% {
+	    opacity: 0; } }
+	
+	.wrap {
+	  position: absolute;
+	  width: 100%;
+	  top: 0;
+	  left: 0;
+	  animation: wrap 1s 5s linear both; }
+	
+	@keyframes wrap {
+	  0% {
+	    transform: translateX(300px); }
+	  100% {
+	    transform: translateX(0); } }
+	
+	.wrap div {
+	  width: 180px;
+	  height: 155px;
+	  transform: skewX(-9deg);
+	  background: #fff;
+	  position: absolute;
+	  top: 0;
+	  right: -15px; }
+	
+	.logo {
+	  position: absolute;
+	  top: 7px;
+	  right: 16px;
+	  animation: logo 1s 6s ease-in-out both; }
+	
+	@keyframes logo {
+	  0% {
+	    transform: translateY(100px);
+	    opacity: 0; }
+	  100% {
+	    transform: translateX(0);
+	    opacity: 1; } }
+	
+	.logo-text1 {
+	  position: absolute;
+	  top: 81px;
+	  right: 9px;
+	  animation: logo-text1 3s 7s ease-in-out both;
+	  opacity: 0; }
+	
+	@keyframes logo-text1 {
+	  0% {
+	    opacity: 0; }
+	  33.33% {
+	    opacity: 1; }
+	  66.66% {
+	    opacity: 1; }
+	  100% {
+	    opacity: 0; } }
+	
+	.logo-text2 {
+	  position: absolute;
+	  top: 78px;
+	  right: 9px;
+	  animation: logo-text2 3s 10s ease-in-out both; }
+	
+	@keyframes logo-text2 {
+	  0% {
+	    transform: translateY(70px);
+	    opacity: 0; }
+	  33.33% {
+	    transform: translateY(0);
+	    opacity: 1; }
+	  66.66% {
+	    opacity: 1; }
+	  100% {
+	    opacity: 0; } }
+	
+	.logo-text3 {
+	  position: absolute;
+	  top: 68px;
+	  right: 19px;
+	  animation: logo-text3 1s 13s ease-in-out both; }
+	
+	@keyframes logo-text3 {
+	  0% {
+	    transform: translateY(70px);
+	    opacity: 0; }
+	  100% {
+	    transform: translateY(0);
+	    opacity: 1; } }
+	
+	.button {
+	  position: absolute;
+	  top: 118px;
+	  right: 16px;
+	  animation: button 1s 14s ease-in-out both; }
+	
+	@keyframes button {
+	  0% {
+	    transform: translateY(35px);
+	    opacity: 0; }
+	  100% {
+	    transform: translateY(0);
+	    opacity: 1; } }
+	
+	.text-fixed {
+	  position: absolute;
+	  top: 5px;
+	  left: -1px; }
+	
+	.slimScrollDiv {
+	  top: 37px;
+	  left: -2px; }
+	
+	.scroll-wrapper {
+	  animation: scroll-wrapper 1s 6s ease-in-out both; }
+	
+	@keyframes scroll-wrapper {
+	  0% {
+	    transform: translateY(80px);
+	    opacity: 0; }
+	  100% {
+	    transform: translateY(0);
+	    opacity: 1; } }
+</style>
+</head>
+<body>
+	<div class="banner-box">
+		<div class="box-content">
+			<div class="container1">
+			<div class="photo1-wrapper">
+				<img src="photo1.png" class="photo1">
+			</div>
+				<div class="wrap">
+					<img src="photo2.png" class="photo2">
+					<div></div>
+					<img src="logo.png" class="logo" id="logo">
+					<img src="logo-text1.png" class="logo-text1">
+					<img src="logo-text2.png" class="logo-text2">
+					<img src="logo-text3.png" class="logo-text3">
+					<img src="button.png" class="button">
+				</div>
+			</div>
+			<div class="container2">
+				<img src="text1.png" class="text1">
+				<img src="text2.png" class="text2">
+				<div class="scroll-wrapper">
+					<img src="text-fixed.png" class="text-fixed">
+					<div class="scroll">
+						<img src="isi.png" class="isi">
+					</div>
+				</div>
+			</div>
+		</div>
+	<script src="jquery.slimscroll.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			var $scroll = $('.scroll');
+			var height = $scroll.height();
+			var seconds = 100;
+			var step = height / seconds / 20;
+			var summ = 0;
+			var timeoutID;
+			var intervalID;
+
+			$scroll.slimScroll({
+				height: '50px',
+				railVisible: true,
+				alwaysVisible: true
+			});
+			var $scrollBar = $('.slimScrollBar');
+			console.log($scrollBar);
+
+			setTimeout(function () {
+				intervalID = setInterval(function scroll(){
+					$scroll.slimScroll({scrollTo: (summ+=step) + 'px'});
+					$scrollBar.css({top: Math.round(summ/height*50) + 'px'})
+				}, 50);
+			}, 17000);
+
+			$scroll.click(function(){
+				clearInterval(intervalID);
+				clearTimeout(timeoutID);
+			});
+		});
+	</script>
+	<script>
+		function logoHandler(e) {Enabler.exit('Logo Exit');}
+		document.getElementById('logo').addEventListener('click', logoHandler, false);
+/*
+		function logoOtsukaHandler(e) {Enabler.exit('Logo Otsuka Exit');}
+		document.getElementById('otsuka-logo').addEventListener('click', logoOtsukaHandler, false);
+
+		function logoLundbeckHandler(e) {Enabler.exit('Logo Lundbeck Exit');}
+		document.getElementById('lundbeck-logo').addEventListener('click', logoLundbeckHandler, false);
+
+		function prescribingInformationHandler(e) {Enabler.exit('Full Prescribing Information Exit');}
+		document.getElementById('full-pi-link').addEventListener('click', prescribingInformationHandler, false);
+
+		function efficacyHandler(e) {Enabler.exit('Efficacy Data Exit');}
+		document.getElementById('btn-efficacy').addEventListener('click', efficacyHandler, false);
+
+		function safetyHandler(e) {Enabler.exit('Safety Data Exit');}
+		document.getElementById('btn-safety').addEventListener('click', safetyHandler, false);
+
+		function dosingHandler(e) {Enabler.exit('Dosing Exit');}
+		document.getElementById('btn-dosing').addEventListener('click', dosingHandler, false);
+
+		function linkToPIHandler(e) {Enabler.exit('Link To PI Exit');}
+		document.getElementById('link-to-PI').addEventListener('click', linkToPIHandler, false);
+
+		function linkToFdackHandler(e) {Enabler.exit('Link To Fda Exit');}
+		document.getElementById('link-to-fda').addEventListener('click', linkToFdackHandler, false);*/
+	</script>
+</body>
+</html>

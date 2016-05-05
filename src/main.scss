@@ -16,9 +16,14 @@ body {margin: 0;;}
 img{border: 0;vertical-align: top;}
 
 //scroll
-.jcf-scrollbar-vertical,
-.jcf-scrollbar-slide{
-	height: $scrollbar-height !important;
+.slimScrollBar{
+	height: 10px !important;
+	width: 4px !important;
+	opacity: .3 !important;
+}
+
+.slimScrollRail{
+	width: 4px !important;
 }
 
 .banner-box,
@@ -143,8 +148,8 @@ img{border: 0;vertical-align: top;}
 .logo{
 	position: absolute;
 	top: 7px;
-	right: 15px;
-	animation: logo 1s 6s ease-in both;
+	right: 16px;
+	animation: logo 1s 6s ease-in-out both;
 }
 
 @keyframes logo{
@@ -156,7 +161,7 @@ img{border: 0;vertical-align: top;}
 	position: absolute;
 	top: 81px;
 	right: 9px;
-	animation: logo-text1 3s 7s ease-in both;
+	animation: logo-text1 3s 7s ease-in-out both;
 	opacity: 0;
 }
 
@@ -171,11 +176,11 @@ img{border: 0;vertical-align: top;}
 	position: absolute;
 	top: 78px;
 	right: 9px;
-	animation: logo-text2 3s 10s ease-in both;
+	animation: logo-text2 3s 10s ease-in-out both;
 }
 
 @keyframes logo-text2{
-	0% { transform: translateY(40px); opacity: 0; }
+	0% { transform: translateY(70px); opacity: 0; }
 	33.33% { transform: translateY(0); opacity: 1; }
 	66.66% { opacity: 1; }
 	100% { opacity: 0; }
@@ -185,17 +190,42 @@ img{border: 0;vertical-align: top;}
 	position: absolute;
 	top: 68px;
 	right: 19px;
-	animation: logo-text3 1s 13s ease-in both;
+	animation: logo-text3 1s 13s ease-in-out both;
+}
+
+@keyframes logo-text3{
+	0% { transform: translateY(70px); opacity: 0; }
+	100% { transform: translateY(0); opacity: 1; }
 }
 
 .button{
 	position: absolute;
 	top: 118px;
-	right: 17px;
-	animation: logo-text3 1s 14s ease-in both;
+	right: 16px;
+	animation: button 1s 14s ease-in-out both;
 }
 
-@keyframes logo-text3{
-	0% { transform: translateY(30px); opacity: 0; }
+@keyframes button{
+	0% { transform: translateY(35px); opacity: 0; }
+	100% { transform: translateY(0); opacity: 1; }
+}
+
+.text-fixed{
+	position: absolute;
+	top: 5px;
+	left: -1px;
+}
+
+.slimScrollDiv{
+	top: 37px;
+	left: -2px;
+}
+
+.scroll-wrapper{
+	animation: scroll-wrapper 1s 6s ease-in-out both;
+}
+
+@keyframes scroll-wrapper{
+	0% { transform: translateY(80px); opacity: 0; }
 	100% { transform: translateY(0); opacity: 1; }
 }

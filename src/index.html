@@ -4,14 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="https://s0.2mdn.net/ads/studio/Enabler.js"> </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="nanoScroller.js"></script>
-<script>
-	$(function() {
-		jcf.replaceAll();
-	});
-</script>
 <style type="text/css">
-	//= nano-style.html
 	//= _temp.html
 </style>
 </head>
@@ -25,13 +18,11 @@
 				<div class="wrap">
 					<img src="photo2.png" class="photo2">
 					<div></div>
-					<img src="logo.png" class="logo">
+					<img src="logo.png" class="logo" id="logo">
 					<img src="logo-text1.png" class="logo-text1">
 					<img src="logo-text2.png" class="logo-text2">
 					<img src="logo-text3.png" class="logo-text3">
 					<img src="button.png" class="button">
-					
-
 				</div>
 			</div>
 			<div class="container2">
@@ -39,47 +30,48 @@
 				<img src="text2.png" class="text2">
 				<div class="scroll-wrapper">
 					<img src="text-fixed.png" class="text-fixed">
-					<img src="isi.png" class="isi"></div>
+					<div class="scroll">
+						<img src="isi.png" class="isi">
+					</div>
 				</div>
+			</div>
 		</div>
-	</div>
+	<script src="jquery.slimscroll.min.js"></script>
 	<script type="text/javascript">
 		$( document ).ready(function() {
-			var scrollArea = $(".scroll-box "),
-				scrollLayer = $('.layer'),
-				scrollThumb = $('.jcf-scrollbar-slider'),
-				flag = false;
-				$(scrollLayer).bind('mousewheel DOMMouseScroll', function () {
-					flag = true;
-					$(this).css('display','none');
-				});
-				$(scrollThumb).bind('mousedown', function () {
-					flag = true;
-					$(scrollLayer).css('display','none');
-				});
+			var $scroll = $('.scroll');
+			var height = $scroll.height();
+			var seconds = 100;
+			var step = height / seconds / 20;
+			var summ = 0;
+			var timeoutID;
+			var intervalID;
 
-			setTimeout(function(){
-				if (flag){
-					$(scrollArea).stop();
-				}
-				else{
-					$(scrollArea).animate({ scrollTop: $('.content').height() }, 115000, 'linear');
-					$(scrollLayer).bind('mousewheel DOMMouseScroll', function () {
-						$(scrollArea).stop();
-						$(this).css('display','none');
-					});
-					$(scrollThumb).bind('mousedown', function () {
-						$(scrollArea).stop();
-						$('.jcf-scrollbar-slider').css('pointer-events','auto');
-					});
-				}
-			}, 6500);
+			$scroll.slimScroll({
+				height: '50px',
+				railVisible: true,
+				alwaysVisible: true
+			});
+			var $scrollBar = $('.slimScrollBar');
+			console.log($scrollBar);
+
+			setTimeout(function () {
+				intervalID = setInterval(function scroll(){
+					$scroll.slimScroll({scrollTo: (summ+=step) + 'px'});
+					$scrollBar.css({top: Math.round(summ/height*50) + 'px'})
+				}, 50);
+			}, 17000);
+
+			$scroll.click(function(){
+				clearInterval(intervalID);
+				clearTimeout(timeoutID);
+			});
 		});
 	</script>
 	<script>
-/*		function logoHandler(e) {Enabler.exit('Logo Exit');}
+		function logoHandler(e) {Enabler.exit('Logo Exit');}
 		document.getElementById('logo').addEventListener('click', logoHandler, false);
-
+/*
 		function logoOtsukaHandler(e) {Enabler.exit('Logo Otsuka Exit');}
 		document.getElementById('otsuka-logo').addEventListener('click', logoOtsukaHandler, false);
 
